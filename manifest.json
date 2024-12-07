@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Ontario Parks Campsite Reviews",
+  "version": "1.0.1",
+  "description": "View and submit reviews for Ontario Parks campsites",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": [
+    "https://reservations.ontarioparks.ca/*",
+    "https://reviews.pockethost.io/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://reservations.ontarioparks.ca/*"],
+      "js": [
+        "js/pocketbase.umd.js",
+        "js/authService.js",
+        "js/popup.js",
+        "js/contentScript.js"
+      ],
+      "css": ["css/widget.css"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+} 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ontario Parks Reviews</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #005c38;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #004c2e;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .success {
+            color: #005c38;
+            font-size: 12px;
+        }
+        #userInfo {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+            <h3>Login</h3>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button id="loginBtn">Login</button>
+            <button id="registerBtn">Register</button>
+            <div id="message"></div>
+        </div>
+        
+        <div id="userInfo">
+            <h3>Welcome!</h3>
+            <p id="userEmail"></p>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <script src="js/pocketbase.umd.js"></script>
+    <script type="module" src="js/authService.js"></script>
+    <script type="module" src="js/popup.js"></script>
+</body>
+</html>
